@@ -901,6 +901,7 @@ INPUT                  = ../include/arpa/inet.h \
                          ../include/hw/gpio.h \
                          ../include/hw/i2c.h \
                          ../include/hw/imu_sensor.h \
+                         ../include/hw/keypad.h \
                          ../include/hw/pwm.h \
                          ../include/hw/sdmmc.h \
                          ../include/hw/spi.h \
