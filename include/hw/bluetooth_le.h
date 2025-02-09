@@ -5,8 +5,8 @@
  * 
  */
 
-#ifndef INC_AUDIO_H_
-#define INC_AUDIO_H_
+#ifndef INC_BLUETOOTHLE_H_
+#define INC_BLUETOOTHLE_H_
 
 #include <stdint.h>
 

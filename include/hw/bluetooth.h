@@ -176,6 +176,13 @@ int bt_device_unpairall(void);
 void bt_print_devlist(int disp_type);
 
 /**
+ * @brief Check if bluetooth host is connected to a device
+ * 
+ * @return int 1 if connected, 0 if not connected
+ */
+int bt_device_isconnected(void);
+
+/**
  * Install "BTMAN" command to manage Bluetooth controller
  * from command line interface.
  *
