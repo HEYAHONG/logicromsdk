@@ -75,7 +75,6 @@ __sfvwrite_r = ___sfvwrite_r;
 _fclose_r = __fclose_r;
 _strerror_r = __strerror_r;
 _strtod_l = __strtod_l;
-_tzset_unlocked_r = __tzset_unlocked_r;
 __tzcalc_limits = ___tzcalc_limits;
 gmtime_r = _gmtime_r;
 
