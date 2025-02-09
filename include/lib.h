@@ -69,6 +69,13 @@ enum loglevel_e {
 typedef void (*urc_callback_f)(unsigned int urc_code, unsigned int urc_param);
 
 /**
+ * Reboot callback function called when reboot command is given
+ * 
+ * @return	True if reboot is allowed, false otherwise
+ */
+typedef int (*reboot_callback_f)(void);
+
+/**
  * Initialize Logicrom OpenCPU SDK library
  * @param stdio			[in] STDIO port (e.g. /dev/ttyUSB0), can be NULL if STDIO is not required
  * @param handler		[in] Function pointer for handling unsolicited responses @ref urc_callback_f
@@ -99,6 +106,12 @@ void system_settz(const char *tz);
  * @param size	[in] Size of buffer
  */
 void system_gettz(char *tz, int size);
+
+/**
+ * Set reboot confirm callback
+ * @param callback	[in] Callback function pointer
+ */
+int system_set_reboot_callback(reboot_callback_f callback);
 
 /**
  * Debug printf with debug level.
