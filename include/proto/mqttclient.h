@@ -19,7 +19,7 @@
 extern "C" {
 #endif
 
-#define MQTT_TOPIC_LEN_MAX 64
+#define MQTT_TOPIC_LEN_MAX 256
 
 /**
  * @brief MQTT error codes
@@ -167,6 +167,24 @@ const char *mqtt_set_port(mqtt_client_t *client, const char *port);
  * @return pointer to CA or NULL when error
  */
 const char *mqtt_set_ca(mqtt_client_t *client, const char *ca);
+
+/**
+ * @brief Set client certificate
+ * 
+ * @param client MQTT client handle
+ * @param cert client certificate in PEM format
+ * @return 0 on success, error code otherwise
+ */
+int mqtt_set_client_cert(mqtt_client_t *client, char* cert);
+
+/**
+ * @brief Set client private key
+ * 
+ * @param client MQTT client handle
+ * @param key client private key
+ * @return 0 on success, error code otherwise
+ */
+int mqtt_set_client_prvkey(mqtt_client_t *client, char* key);
 
 /**
  * @brief Set custom user argument passed to reconnect hook handler
