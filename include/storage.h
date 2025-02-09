@@ -46,7 +46,8 @@ struct storagecfg_t {
 	uint8_t mode;		  /**< Storage mode @ref storage_mode_e */
 	uint8_t on_full;	  /**< Action to be taken when storage is full @ref storage_action_e */
 	uint8_t compression;  /**< 1 to enable compression, 0 for no compression */
-	uint8_t reserved;	  /**< reserved for future use */
+	uint8_t noformat_onfail;  /**< 0 will format storage space when configuration fails to load, Set 1 to disable format */
+	uint16_t reserved;	  /**< reserved for future use */
 	uint32_t packet_sz;	  /**< Approximate Average data packet size, this parameter is only used for storage estimation. does not limit data size for read/write */
 	uint32_t max_storage; /**< Maximum number/count of data packets to store, storage full status is based on either max_storage is reached or storage memory <= resvd_mem */
 	uint32_t reserved_mem;/**< Amount to reserved memory to keep in storage media, 16Kb minimum */
