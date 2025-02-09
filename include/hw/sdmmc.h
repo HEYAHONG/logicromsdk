@@ -21,6 +21,20 @@ enum cardtype_e {
     CARD_TYPE_SD,   /**< Card is SD or MMC type */
 };
 
+enum data_mode_e {
+    DATA_MODE_4BIT, /**< 4-bit data mode */
+    DATA_MODE_1BIT, /**< 1-bit data mode */
+};
+
+/**
+ * @brief SDMMC Configuration
+ * 
+ */
+struct sdmmc_cfg_t {
+    uint8_t card_type; /**< Card type @ref cardtype_e */
+    uint8_t data_mode; /**< Data mode @ref data_mode_e */
+};
+
 /**
  * @brief Mount an SD card
  * 
@@ -35,7 +49,7 @@ enum cardtype_e {
  * @param type card type @ref cardtype_e
  * @return 0 on success, negative on error 
  */
-int sdmmc_mount(uint8_t type);
+int sdmmc_mount(struct sdmmc_cfg_t *cfg);
 
 /**
  * @brief Unmount SD card
