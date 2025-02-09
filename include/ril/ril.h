@@ -235,15 +235,23 @@ int ril_urc_detach(const char *keyword);
 
 /**
  * Get exclusive access to Radio interface layer. This lock is only an advisory lock for RIL.
- * @note ril_lock() and ril_unlock() should be called from same task
- * @param timeout		[in] Timeout value in milliseconds to wait for lock
- * @return				0 on success, -EWOULDBLOCK on error or when lock is unavailable
+ * @note ril_lock(), ril_trylock() and ril_unlock() should be called from same task
+ * @param wait		[in] true to wait for lock, false to return immediately
+ * @return			0 on success, -EWOULDBLOCK on error or when lock is unavailable
  */
-int ril_lock(int timeout);
+int ril_lock(int wait);
+
+/**
+ * Get exclusive access to Radio interface layer. This lock is only an advisory lock for RIL.
+ * @note ril_lock(), ril_trylock() and ril_unlock() should be called from same task
+ * @param wait_ms 	[in] Wait time in milliseconds
+ * @return 			0 on success, -EWOULDBLOCK on error or when lock is unavailable
+ */
+int ril_trylock(int wait_ms);
 
 /**
  * Unlock RIL layer
- * @note ril_lock() and ril_unlock() should be called from same task
+ * @note ril_lock(), ril_trylock() and ril_unlock() should be called from same task
  */
 void ril_unlock(void);
 
