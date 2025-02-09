@@ -120,14 +120,14 @@ D6     I/O         GPIO27, SD_D2
 D7     I/O         GPIO28, SD_D3
 D8     I/O         GPIO18_ALT
 D9     I/O         GPIO19_ALT
-D10    I/O         GPIO23, SPI_SS [4]_
-D11    I/O         GPIO2, SPI_MOSI
-D12    I/O         GPIO3, SPI_MISO
-D13    I/O         GPIO0, SPI_CLK
+D10    I/O         GPIO23, SPI1_SS [4]_
+D11    I/O         GPIO2, SPI1_MOSI
+D12    I/O         GPIO3, SPI1_MISO
+D13    I/O         GPIO0, SPI1_CLK
 GND    G           Ground
 SDVDD  P           SD Card power
 SDA    I/O         GPIO17, I2C0_SDA
-SCL    I/O         GPIO11, I2C0_SCL
+SCL    I/O         GPIO16, I2C0_SCL
 =====  ==========  ===============================================
 
 
