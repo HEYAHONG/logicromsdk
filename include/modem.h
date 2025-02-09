@@ -32,6 +32,7 @@ enum mderror_e
 	MD_ERR_INVALID_PARAM = -4, /**< Invalid parameter */
 	MD_ERR_NOMEM = -5,		   /**< No memory available */
 	MD_ERR_NOTALLOWED = -6,	   /**< Operation not allowed */
+	MD_ERR_NOTSUPPORTED = -7,  /**< Operation not supported */
 };
 
 /**
