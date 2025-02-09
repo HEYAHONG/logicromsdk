@@ -71,6 +71,45 @@ int fota_set_interval(int hours);
  */
 int fota_get_interval(void);
 
+/**
+ * @defgroup APPFOTA
+ * @brief These functions are used to update application firmware
+ * from external source. User can write their own update interface
+ * and use these function to interface with low level firmware update.
+ * 
+ * @{
+ */
+
+/**
+ * @brief Initialize application firmware update
+ * 
+ * @param handle [out] handle to use in subsequent calls
+ * @return return 0 on success, negative value on error
+ */
+int appfota_init(int *handle);
+
+/**
+ * @brief Write firmware data to application firmware update
+ * 
+ * @param handle [in] handle returned by appfota_init()
+ * @param buff [in] buffer containing firmware data
+ * @param len [in] length of buffer
+ * @return return 0 on success, negative value on error
+ */
+int appfota_write(int handle, const void *buff, size_t len);
+
+/**
+ * @brief Finish application firmware update, If the firmware binary
+ * is valid, system will enter bootloader and update firmware. If the
+ * firmware binary is invalid, an error will be returned.
+ * 
+ * @param handle [in] handle returned by appfota_init()
+ * @return return negative value on error
+ */
+int appfota_finish(int handle);
+
+/** @} */
+
 #ifdef __cplusplus
 }
 #endif
