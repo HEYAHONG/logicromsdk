@@ -62,6 +62,20 @@ enum loglevel_e {
 #endif
 
 /**
+ * @brief Reboot reasons
+ * 
+ */
+enum reboot_reason_e {
+	RESET_REASON_REBOOT, /**< Reboot command or sys_reset() */
+	RESET_REASON_NOSIM, /**< Reboot due to No SIM card */
+	RESET_REASON_NETWORKFAIL, /**< Reboot due to network registration failure */
+	RESET_REASON_DATAFAIL, /**< Reboot due to data connection failure */
+	RESET_REASON_FOTA, /**< Reboot due to FOTA update */
+	RESET_REASON_PARAMRESET, /**< Reboot due to parameter reset */
+	RESET_REASON_SYSFORMAT, /**< Reboot due to system memory format */
+};
+
+/**
  * Unsolicited response code handler callback
  * @param urc_code			URC code @ref sysurc_e
  * @param urc_param			URC parameter
@@ -69,11 +83,14 @@ enum loglevel_e {
 typedef void (*urc_callback_f)(unsigned int urc_code, unsigned int urc_param);
 
 /**
- * Reboot callback function called when reboot command is given
+ * Reboot callback function called when reboot is issued by the system.
+ * this callback can be used to confirm or deny reboot.
+ * 
+ * @param reason	[in] Reboot reason @ref reboot_reason_e
  * 
  * @return	True if reboot is allowed, false otherwise
  */
-typedef int (*reboot_callback_f)(void);
+typedef int (*reboot_confirm_callback_f)(int reason);
 
 /**
  * Initialize Logicrom OpenCPU SDK library
@@ -111,7 +128,7 @@ void system_gettz(char *tz, int size);
  * Set reboot confirm callback
  * @param callback	[in] Callback function pointer
  */
-int system_set_reboot_callback(reboot_callback_f callback);
+int system_set_reboot_callback(reboot_confirm_callback_f callback);
 
 /**
  * Debug printf with debug level.
