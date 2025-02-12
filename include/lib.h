@@ -130,6 +130,16 @@ void system_gettz(char *tz, int size);
  */
 int system_set_reboot_callback(reboot_confirm_callback_f callback);
 
+#ifdef SOC_RDA8955
+/**
+ * Set debug() out on RDA8955 debug trace port.
+ * default is off
+ * @param en	[in] true to enable, false to disable
+ * @return 		0 on success, -ve for error
+ */
+int system_set_debug_trace(int en);
+#endif
+
 /**
  * Debug printf with debug level.
  * 

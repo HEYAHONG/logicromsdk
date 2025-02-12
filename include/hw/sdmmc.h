@@ -33,6 +33,8 @@ enum data_mode_e {
 struct sdmmc_cfg_t {
     uint8_t card_type; /**< Card type @ref cardtype_e */
     uint8_t data_mode; /**< Data mode @ref data_mode_e */
+    uint32_t reserved; /**< Reserved, keep as 0 */
+    uint32_t reserved1; /**< Reserved, keep as 0 */
 };
 
 /**
@@ -46,7 +48,7 @@ struct sdmmc_cfg_t {
  * 
  * @note Only supported on 4G Modules
  * 
- * @param type card type @ref cardtype_e
+ * @param cfg SDMMC Configuration @ref sdmmc_cfg_t
  * @return 0 on success, negative on error 
  */
 int sdmmc_mount(struct sdmmc_cfg_t *cfg);

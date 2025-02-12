@@ -101,7 +101,7 @@
 typedef uint8_t sa_family_t;
 #endif
 
-#if !defined(socklen_t) && !defined(SOCKLEN_T_DEFINED)
+#if !defined(socklen_t) && !defined(__socklen_t_defined) && !defined(SOCKLEN_T_DEFINED)
 typedef uint32_t socklen_t;
 #endif
 

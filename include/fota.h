@@ -79,7 +79,8 @@ int fota_set_interval(int hours);
 int fota_get_interval(void);
 
 /**
- * @defgroup APPFOTA
+ * @defgroup APPFOTA FOTA Interface
+ * 
  * @brief These functions are used to update application firmware
  * from external source. User can write their own update interface
  * and use these function to interface with low level firmware update.
