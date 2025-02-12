@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('./_ext'))
 # -- Project information -----------------------------------------------------
 
 project = 'Logicrom OpenCPU SDK'
-copyright = "2021-" + datetime.today().strftime("%Y") + ", Waybyte Solutions"
+copyright = "2021-" + datetime.today().strftime("%Y") + ", Waybyte Solutions Pvt. Ltd."
 author = 'Waybyte Developers'
 
 # -- General configuration ---------------------------------------------------
@@ -79,7 +79,6 @@ exhale_args = {
 #
 # html_theme = 'alabaster'
 html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
