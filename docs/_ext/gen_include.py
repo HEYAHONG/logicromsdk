@@ -90,7 +90,7 @@ def get_doxyfile_input_paths(app, doxyfile_path):
             # process only lines that are not comments
             if line.find("#") == -1:
                 # extract header file path inside components folder
-                m = re.search("include/(.*\.h)", line)  # noqa: W605 - regular expression
+                m = re.search(r"include/(.*\.h)", line)  # noqa: W605 - regular expression
                 header_file_path = m.group(0)
 
                 doxyfile_INPUT.append(header_file_path)
